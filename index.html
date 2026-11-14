@@ -1,174 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Chrizan Castillo's IT student portfolio, featuring Django, Docker, PostgreSQL, and networking projects.">
-<title>Chrizan Castillo | IT Portfolio</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&amp;display=swap">
-<style>
-:root {
-  color-scheme: light;
-  --paper: #faf9fd;
-  --white: #fff;
-  --ink: #242235;
-  --muted: #625d73;
-  --purple: #633fce;
-  --soft: #f0eaff;
-  --line: #e6e0f3;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font: 16px/1.65 "DM Sans", system-ui, sans-serif;
-}
-a { color: inherit; }
-a:focus-visible { outline: 2px solid var(--purple); outline-offset: 5px; }
-h1, h2, h3, p { margin: 0; }
-.frame, .section, footer { width: min(1032px, calc(100% - 48px)); margin: auto; }
-header { border-bottom: 1px solid var(--line); background: var(--white); }
-header .frame {
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-  align-items: center;
-  min-height: 76px;
-}
-header a, .scroll, .social, .button, footer a { text-decoration: none; }
-.brand { font-weight: 800; letter-spacing: -.025em; }
-nav { display: flex; flex-wrap: wrap; gap: clamp(12px, 3vw, 32px); font-size: .9rem; }
-nav a:hover, footer a:hover { color: var(--purple); }
-.hero-wrap {
-  background: radial-gradient(ellipse at bottom left, #ece4fc, transparent 40%),
-              radial-gradient(ellipse at top right, #f0eaff, transparent 40%);
-}
-.hero {
-  min-height: 560px;
-  padding: 64px 0 28px;
-  display: grid;
-  grid-template-columns: 54px minmax(0, 1.2fr) minmax(0, 1fr);
-  column-gap: clamp(20px, 4vw, 48px);
-  row-gap: 32px;
-  align-items: center;
-}
-.social {
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  color: var(--purple);
-  background: var(--white);
-  font-weight: 800;
-}
-.social:hover { background: var(--soft); }
-h1 { font-size: clamp(2.65rem, 5.6vw, 4.65rem); line-height: 1.04; letter-spacing: -.065em; }
-.role { margin: 12px 0 8px; font-size: 1.15rem; font-weight: 650; }
-.intro, .copy, article p { color: var(--muted); max-width: 58ch; }
-.button {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  margin-top: 24px;
-  border-radius: 8px;
-  padding: 12px 18px;
-  background: var(--purple);
-  color: white;
-  font-weight: 700;
-}
-.button:hover { background: #5431b6; }
-.portrait {
-  width: min(100%, 325px);
-  aspect-ratio: 1.04;
-  margin: 0 auto;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  border-radius: 50% 50% 46% 54% / 40% 43% 57% 60%;
-  background: linear-gradient(145deg, #805be4, #5d41cc);
-  color: white;
-  box-shadow: 0 20px 48px #633fce26;
-}
-.portrait span { font-size: clamp(4rem, 11vw, 8rem); font-weight: 800; letter-spacing: -.07em; }
-.portrait img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.scroll { grid-column: 2; color: var(--purple); align-self: end; font-weight: 700; font-size: .9rem; }
-.section { padding: 66px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 12px; }
-h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.12; letter-spacing: -.045em; margin-bottom: 24px; }
-h3 { font-size: 1.28rem; line-height: 1.25; margin: 8px 0 12px; }
-.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.grid article {
-  display: flex;
-  flex-direction: column;
-  padding: 24px;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-}
-.grid article .label { color: var(--purple); font-size: .8rem; font-weight: 700; }
-.tags { display: flex; flex-wrap: wrap; gap: 8px; margin: auto 0 0; padding: 22px 0 0; list-style: none; }
-.tags li { padding: 3px 8px; border-radius: 6px; background: var(--soft); color: #5130a8; font-size: .76rem; }
-.split { display: grid; grid-template-columns: 1fr 2fr; gap: 24px; }
-.skills { margin: 0; }
-.skills div { display: grid; grid-template-columns: 1fr 2fr; gap: 12px; padding: 12px 0; }
-.skills div + div { border-top: 1px solid var(--line); }
-dt { font-weight: 700; }
-dd { margin: 0; color: var(--muted); }
-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; padding: 26px 0; color: var(--muted); font-size: .9rem; }
-@media (max-width: 760px) {
-  .hero { min-height: 0; grid-template-columns: 46px minmax(0, 1fr); padding-top: 46px; }
-  .portrait { grid-column: 2; grid-row: 1; justify-self: start; margin: 0; width: min(72%, 230px); }
-  .social { grid-column: 1; grid-row: 1; }
-  .hero-copy { grid-column: 1 / -1; }
-  .scroll { grid-column: 1 / -1; }
-  .grid, .split { grid-template-columns: 1fr; }
-  .section { padding: 50px 0; }
-  .split h2 { margin-bottom: 0; }
-}
-@media (max-width: 375px) {
-  .frame, .section, footer { width: calc(100% - 28px); }
-  header .frame { gap: 12px; }
-}
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Chrizan Castillo — aspiring IT professional and web developer portfolio." />
+  <meta name="theme-color" content="#090b16" />
+  <title>Home | Chrizan Castillo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
-<body id="top">
-<header>
-  <div class="frame">
-    <a class="brand" href="#top">Chrizan</a>
-    <nav aria-label="Main">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-    </nav>
-  </div>
-</header>
-<main>
-<div class="hero-wrap">
-  <section class="hero frame" aria-labelledby="name">
-    <a class="social" href="https://github.com/chrizan-rgb" aria-label="Chrizan Castillo on GitHub">GH</a>
-    <div class="hero-copy">
-      <h1 id="name">Hi, I’m Chrizan Castillo.</h1>
-      <p class="role">IT Student</p>
-      <p class="intro">I build web projects with Django and practice configuring networks. I’m interested in how applications, databases, and networks work together.</p>
-      <a class="button" href="#projects">View Projects <span aria-hidden="true">→</span></a>
-    </div>
-    <!-- Replace the initials with <img src="profile.jpg" alt="Chrizan Castillo"> when a photo is available. -->
-    <div class="portrait"><span aria-hidden="true">CC</span></div>
-    <a class="scroll" href="#about">↓ Scroll down</a>
-  </section>
-</div>
-<section class="section split" id="about"><div><h2>About me</h2></div><p class="copy">I’m an IT student in the Philippines preparing for my first role after graduation. I enjoy figuring out how a system fits together, from how a web app stores data to how devices communicate across networks.</p></section>
-<section class="section" id="projects"><p class="eyebrow">Selected work</p><h2>Projects</h2>
-<div class="grid">
-<article><p class="label">Web development</p><h3>Django Website &amp; API</h3><p>I ran a Django site locally with Docker Compose, switched its database from SQLite to PostgreSQL, and used pgAdmin to inspect the database.</p><ul class="tags"><li>Django</li><li>Docker Compose</li><li>PostgreSQL</li></ul></article>
-<article><p class="label">System design concept</p><h3>Student Management System</h3><p>I planned a system where students can view their grades, teachers can update records, and administrators can manage student information. The design uses a REST API for mobile access.</p><ul class="tags"><li>REST API</li><li>Django REST Framework</li><li>User roles</li></ul></article>
-<article><p class="label">Networking lab</p><h3>Packet Tracer Routing</h3><p>I practiced connecting computers across two networks with routers and switches. The exercises covered subnetting, static routes, and connectivity checks.</p><ul class="tags"><li>Cisco Packet Tracer</li><li>IPv4</li><li>Static routing</li></ul></article>
-</div></section>
-<section class="section split" id="skills"><div><h2>Technical skills</h2></div><dl class="skills"><div><dt>Web development</dt><dd>Python, Django, Django REST Framework, HTML, CSS</dd></div><div><dt>Databases &amp; tools</dt><dd>PostgreSQL, SQLite, pgAdmin, Docker Compose</dd></div><div><dt>Networking</dt><dd>Cisco Packet Tracer, IPv4 subnetting, static routing, ping and tracert</dd></div></dl></section>
-</main><footer><span>Chrizan Castillo</span><a href="#top">Back to top ↑</a></footer>
-</body>
-</html>
+<body><div class="glow glow-one" aria-hidden="true"></div><div class="glow glow-two" aria-hidden="true"></div><header class="site-header"><nav class="container nav" aria-label="Main navigation"><a class="brand" href="index.html">CC<span>.</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">☰</button><div class="nav-links" id="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="projects.html">Projects</a><a href="contact.html" class="nav-contact">Let's Talk ↗</a></div></nav></header><main>    <section id="home" class="hero container">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="status-dot"></span> OPEN TO LEARNING & OPPORTUNITIES</div>
+        <p class="intro">Hello, I'm</p>
+        <h1>Chrizan<br /><span>Castillo.</span></h1>
+        <h2>Aspiring IT Professional <span class="sparkle">✳</span></h2>
+        <p class="hero-description">I build useful web experiences, explore software development, and turn ideas into real projects. Welcome to my digital space.</p>
+        <div class="hero-buttons"><a href="projects.html" class="btn btn-primary">Explore My Work <span>↗</span></a><a href="contact.html" class="btn btn-secondary">Contact Me</a></div>
+        <div class="hero-mini"><span>⌘ &nbsp;Web Development</span><span>◈ &nbsp;Backend & APIs</span><span>⚙ &nbsp;Creative Tech</span></div>
+      </div>
+      <div class="hero-art reveal" aria-hidden="true">
+        <div class="orbit orbit-outer"></div><div class="orbit orbit-inner"></div>
+        <div class="glass-card code-card"><div class="card-dots"><i></i><i></i><i></i></div><code><span class="code-purple">const</span> developer = {<br />&nbsp;&nbsp;name: <span class="code-green">'Chrizan'</span>,<br />&nbsp;&nbsp;passion: <span class="code-green">'Building'</span>,<br />&nbsp;&nbsp;status: <span class="code-green">'Learning'</span><br />};</code></div>
+        <div class="floating-badge badge-top">✦ &nbsp; Create. Code. Learn.</div>
+        <div class="floating-badge badge-bottom">&lt;/&gt; &nbsp; Developer Mindset</div>
+      </div>
+    </section><section class="section container reveal"><div class="section-heading"><span class="section-index">EXPLORE</span><h2>Explore my <span>portfolio.</span></h2><p>Each section has its own page. Select one to learn more.</p></div><div class="page-grid"><a class="page-tile" href="about.html"><span>01 / ABOUT</span><h3>Get to know me ↗</h3><p>Background, interests, and journey in technology.</p></a><a class="page-tile" href="skills.html"><span>02 / SKILLS</span><h3>My tech stack ↗</h3><p>The tools and languages I'm learning and using.</p></a><a class="page-tile" href="projects.html"><span>03 / PROJECTS</span><h3>Explore projects ↗</h3><p>Open each project to view details on a separate page.</p></a><a class="page-tile" href="contact.html"><span>04 / CONTACT</span><h3>Get in touch ↗</h3><p>Connect through email and GitHub.</p></a></div></section></main><footer class="container footer"><a class="brand" href="index.html">CC<span>.</span></a><span>© <span id="year"></span> Chrizan Castillo. Built with passion.</span><a href="index.html">Back to home ↑</a></footer></body></html>
