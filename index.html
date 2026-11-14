@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Chrizan Castillo's IT student portfolio, featuring Django, Docker, PostgreSQL, and networking projects.">
+<title>Chrizan Castillo | IT Portfolio</title>
+<style>
+:root{color-scheme:dark;--bg:#111715;--panel:#19221e;--ink:#f2f5ea;--secondary:#b1c2b5;--accent:#d2fb85;--line:#35463b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}a{color:inherit}a:focus-visible{outline:2px solid var(--accent);outline-offset:5px}header,main,footer{width:min(1120px,calc(100% - 48px));margin:auto}header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:24px 0;border-bottom:1px solid var(--line)}header a{text-decoration:none}nav{display:flex;gap:clamp(14px,4vw,34px);color:var(--secondary);font-size:.91rem}.brand,.eyebrow,.label{font-family:ui-monospace,monospace}.brand{font-weight:700;color:var(--accent)}.hero{display:grid;grid-template-columns:1.35fr 1fr;gap:34px;align-items:center;min-height:550px;padding:64px 0}.eyebrow,.label{color:var(--accent);font-size:.76rem;text-transform:uppercase;letter-spacing:.12em}h1,h2,h3,p{margin:0}h1{font-size:clamp(3rem,8vw,6.8rem);line-height:.95;letter-spacing:-.085em;margin:16px 0 24px}h1 span{display:block}h2{font-size:clamp(2rem,5vw,3.3rem);line-height:1.12;letter-spacing:-.055em;margin:8px 0 22px}h3{font-size:1.35rem;line-height:1.3;margin:8px 0 12px}.intro,.copy,article p{color:var(--secondary);max-width:60ch}.button{display:inline-block;background:var(--accent);color:#172013;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:6px;margin-top:24px}.button:hover{background:#e3ffaf}.board{margin:0;border:1px solid var(--line);border-radius:12px;background:radial-gradient(circle at center,#273b24,transparent 74%),var(--panel);overflow:hidden}.board figcaption{padding:12px 16px;border-bottom:1px solid var(--line);color:var(--secondary);font:12px ui-monospace,monospace}.board svg{width:100%;height:auto;display:block}.section{border-top:1px solid var(--line);padding:54px 0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid article{padding:24px;border:1px solid var(--line);border-radius:12px;background:var(--panel);display:flex;flex-direction:column}.grid article p{margin-bottom:22px}.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:auto 0 0;padding:0}.tags li{font-size:.76rem;border:1px solid #52634e;border-radius:5px;padding:3px 8px;color:#d8e7d8}.split{display:grid;grid-template-columns:1fr 2fr;gap:24px}.skills{display:grid;gap:12px;margin:0}.skills div{display:grid;grid-template-columns:1fr 2fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}dt{font-weight:700}dd{margin:0;color:var(--secondary)}footer{border-top:1px solid var(--line);padding:24px 0 36px;color:var(--secondary);display:flex;justify-content:space-between;gap:14px;font-size:.86rem}footer a:hover,nav a:hover{color:var(--accent)}
+@media(max-width:760px){.hero,.split{grid-template-columns:1fr;min-height:0;gap:24px}.hero{padding:48px 0}.grid{grid-template-columns:1fr}.board{max-width:490px}.section{padding:40px 0}}@media(max-width:360px){header,main,footer{width:calc(100% - 28px)}nav{gap:10px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body id="top">
+<header><a class="brand" href="#top" aria-label="Chrizan Castillo home">CC<span aria-hidden="true">.</span></a><nav aria-label="Main"><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#about">About</a></nav></header>
+<main>
+<section class="hero" aria-labelledby="name">
+<div><p class="eyebrow">IT student · Philippines</p><h1 id="name">Chrizan <span>Castillo.</span></h1><p class="intro">I build web projects with Django and practice configuring networks. I’m interested in how applications, databases, and networks work together.</p><a class="button" href="#projects">Explore my projects <span aria-hidden="true">↘</span></a></div>
+<figure class="board"><figcaption>DJANGO PROJECT · LOCAL STACK</figcaption>
+<svg viewBox="0 0 440 310" role="img" aria-labelledby="stack-title"><title id="stack-title">A browser connects to Django, which connects to PostgreSQL. Django and PostgreSQL run in Docker Compose.</title>
+<defs><pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#354a39"/></pattern></defs><rect width="440" height="310" fill="url(#dots)"/>
+<rect x="37" y="119" width="366" height="145" rx="14" fill="none" stroke="#6b8867" stroke-dasharray="5 5"/>
+<g stroke="#d2fb85" stroke-width="2" fill="none"><path d="M220 92v46m-5-6 5 6 5-6M195 178h50m-6-5 6 5-6 5"/></g>
+<g fill="#1c2b20" stroke="#76956b"><rect x="154" y="45" width="132" height="47" rx="8"/><rect x="62" y="152" width="132" height="52" rx="8"/><rect x="246" y="152" width="132" height="52" rx="8"/></g>
+<path d="M220 138h-92v14" stroke="#d2fb85" stroke-width="2" fill="none"/>
+<g text-anchor="middle" font-family="monospace" font-size="15" fill="#f2f5ea"><text x="220" y="74">Browser</text><text x="128" y="184">Django</text><text x="312" y="184">PostgreSQL</text><text x="220" y="239" fill="#d2fb85" font-size="12">DOCKER COMPOSE</text></g></svg></figure>
+</section>
+<section class="section" id="projects"><p class="eyebrow">Selected work</p><h2>Projects</h2>
+<div class="grid">
+<article><p class="label">Web development</p><h3>Django Website &amp; API</h3><p>I ran a Django site locally with Docker Compose, switched its database from SQLite to PostgreSQL, and used pgAdmin to inspect the database.</p><ul class="tags"><li>Django</li><li>Docker Compose</li><li>PostgreSQL</li></ul></article>
+<article><p class="label">System design concept</p><h3>Student Management System</h3><p>I planned a system where students can view their grades, teachers can update records, and administrators can manage student information. The design uses a REST API for mobile access.</p><ul class="tags"><li>REST API</li><li>Django REST Framework</li><li>User roles</li></ul></article>
+<article><p class="label">Networking lab</p><h3>Packet Tracer Routing</h3><p>I practiced connecting computers across two networks with routers and switches. The exercises covered subnetting, static routes, and connectivity checks.</p><ul class="tags"><li>Cisco Packet Tracer</li><li>IPv4</li><li>Static routing</li></ul></article>
+</div></section>
+<section class="section split" id="skills"><div><h2>Technical skills</h2></div><dl class="skills"><div><dt>Web development</dt><dd>Python, Django, Django REST Framework, HTML, CSS</dd></div><div><dt>Databases &amp; tools</dt><dd>PostgreSQL, SQLite, pgAdmin, Docker Compose</dd></div><div><dt>Networking</dt><dd>Cisco Packet Tracer, IPv4 subnetting, static routing, ping and tracert</dd></div></dl></section>
+<section class="section split" id="about"><div><h2>About me</h2></div><p class="copy">I’m an IT student in the Philippines preparing for my first role after graduation. I enjoy figuring out how a system fits together, from how a web app stores data to how devices communicate across networks.</p></section>
+</main><footer><span>Chrizan Castillo</span><a href="#top">Back to top ↑</a></footer>
+</body>
+</html>
