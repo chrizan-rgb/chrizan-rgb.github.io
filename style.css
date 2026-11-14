@@ -2,3 +2,47 @@
 
 /* Multi-page layout */
 .page-top{padding-top:42px;display:flex;gap:12px;align-items:center;font-size:13px;color:var(--muted)}.page-top .text-link{color:var(--accent)}.page-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.page-tile{display:block;background:linear-gradient(145deg,#17152e,#101424);border:1px solid var(--border);padding:31px;border-radius:19px;transition:transform .2s,border-color .2s}.page-tile:hover{transform:translateY(-5px);border-color:var(--accent)}.page-tile>span{font-size:11px;letter-spacing:2px;color:var(--accent)}.page-tile h3{font-size:25px;margin:16px 0 8px}.page-tile p{color:var(--muted);margin:0;font-size:14px}.project-click{display:block;min-width:0}.project-click:focus-visible,.page-tile:focus-visible,.nav-links a:focus-visible{outline:2px solid #d2b7ff;outline-offset:4px;border-radius:12px}.nav-links a[aria-current="page"]{color:#d9caff}.detail-page{padding-top:65px;padding-bottom:100px;min-height:70vh}.detail-page h1{font-size:clamp(43px,7vw,78px);letter-spacing:-3px;max-width:850px}.accent-period{color:var(--accent)}.detail-lead{font-size:19px;color:var(--muted);max-width:760px}.detail-banner{margin:40px 0;background:radial-gradient(circle at 50% 35%,#53368e,#19152e 70%);min-height:280px;border-radius:22px;border:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:24px}.detail-banner>span{font-size:75px;color:#e4d6ff}.detail-banner small{letter-spacing:2px;color:#d0c1ec}.detail-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:55px}.detail-grid h2{font-size:32px}.detail-grid p{color:var(--muted)}.detail-grid aside{padding:24px;background:var(--surface2);border-radius:16px}.detail-grid aside h3{font-size:18px}.detail-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}@media(max-width:640px){.page-grid,.detail-grid{grid-template-columns:1fr}.page-tile{padding:23px}.detail-page h1{letter-spacing:-2px}.detail-banner{min-height:200px}}
+
+/* Purple glowing profile card */
+.profile-card {
+  width: min(100%, 360px);
+  margin: 0 auto;
+  padding: 28px;
+  text-align: center;
+  border-radius: 28px;
+  background: rgba(139, 92, 246, 0.08);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.18);
+}
+
+.profile-image {
+  width: 240px;
+  height: 240px;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #a78bfa;
+  box-shadow: 0 0 35px rgba(167, 139, 250, 0.4);
+}
+
+.profile-card h3 {
+  margin-top: 20px;
+  color: white;
+  font-size: 24px;
+}
+
+.profile-card p {
+  margin-top: 8px;
+  color: #b8a9dc;
+}
+
+@media (max-width: 768px) {
+  .profile-card {
+    padding: 20px;
+  }
+
+  .profile-image {
+    width: 190px;
+    height: 190px;
+  }
+}
